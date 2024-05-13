@@ -10,7 +10,6 @@ const BackgroundFooter = styled.div`
     background-repeat: no-repeat;
     height: 50.8vw;
     background-position: center;
-    max-width: 1440px;
     ${tw``};
   `}
 `;
@@ -26,9 +25,9 @@ const NoteFooter = tw.p`lg:ml-[2.16rem] italic`
 function Footer() {
   return (
     <footer tw='w-full justify-center flex items-start'>
-      <BackgroundFooter tw="lg:bg-contain xs:bg-cover 2xl:h-auto 2xl:py-[10rem] lg:h-[50.8vw] xs:h-auto xs:py-[6vw] lg:py-[2vw]">
+      <BackgroundFooter tw="lg:bg-contain 2xl:bg-cover xs:bg-cover 2xl:h-auto 2xl:py-[10rem] lg:h-[50.8vw] xs:h-auto xs:py-[6vw] lg:py-[2vw]">
         <div tw='absolute bottom-0 w-full -z-10 h-[20rem] bg-secondary-footerColor'></div>
-        <Wrapper tw='flex flex-col 2xl:mt-[10rem] xl:mt-[13.1rem] lg:mt-[8.3rem] md:mt-[5.3rem] xs:mt-[2.3rem]'>
+        <Wrapper tw='flex flex-col 2xl:mt-[10rem] xl:mt-[13.1rem] lg:mt-[8.3rem] mx-auto md:mt-[5.3rem] xs:mt-[2.3rem]'>
           <a href='#' tw='absolute bottom-[11.4rem] rounded-md text-background-main right-[4rem] w-[2.3rem] h-[2.3rem] bg-secondary-mainColor flex justify-center items-center'>
             <i className='fa-solid fa-arrow-up'></i>
           </a>

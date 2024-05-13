@@ -10,7 +10,16 @@ import Image from "../../../components/Image";
 
 function Contact() {
   return (
-    <Section tw='mt-[9.05rem]'>
+    <Section tw='mt-[9.05rem] relative'>
+         <div
+        tw='absolute top-[-12.8rem] left-0 -z-10 w-[81.5%]'
+      >
+        <img
+          tw='w-full -z-10'
+          src={window.location.origin + "/Background-Bubble-3.png"}
+          alt=''
+        />
+      </div>
       <Wrapper tw='flex justify-between xs:flex-col-reverse md:flex-row'>
         <div tw='basis-[46%] flex items-center'>
           <Image

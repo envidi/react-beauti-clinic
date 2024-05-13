@@ -1,5 +1,6 @@
 import tw, { styled, css } from "twin.macro";
 import Wrapper from "./Wrapper";
+import Image from "./Image";
 const BackgroundFooter = styled.div`
   ${css`
     position: relative;
@@ -14,12 +15,14 @@ const BackgroundFooter = styled.div`
   `}
 `;
 const UlStyles = tw.ul`
-mt-[1.8rem] flex flex-col gap-[0.7rem] ml-[0.1rem]
+lg:mt-[1.8rem] xs:mt-[1.1rem] flex flex-col gap-[0.7rem] lg:ml-[0.1rem]
   [> li]:(block tracking-[0.1rem])
   [> li >i]:(mr-[0.25rem] text-[0.8rem])`
 const IconFooter = tw.div`
   [> div > i]:( text-[1.52rem])
   `
+const HeadingFooter = tw.h5`text-[1.1rem]`
+const NoteFooter = tw.p`lg:ml-[2.16rem] italic`
 function Footer() {
   return (
     <footer tw='w-full justify-center flex items-start'>
@@ -29,26 +32,26 @@ function Footer() {
           <a href='#' tw='absolute bottom-[11.4rem] rounded-md text-background-main right-[4rem] w-[2.3rem] h-[2.3rem] bg-secondary-mainColor flex justify-center items-center'>
             <i className='fa-solid fa-arrow-up'></i>
           </a>
-          <div className='grid lg:grid-cols-[2fr_1fr_1fr] xs:grid-cols-2 gap-y-7 text-background-main'>
+          <div className='grid lg:grid-cols-[2fr_1fr_1fr] xs:grid-cols-2 xs:gap-y-14 text-background-main'>
             <div tw='flex flex-col xs:items-center lg:items-start col-span-2 lg:col-span-1'>
-              <img tw="w-[16.3rem] object-cover mt-[0.9rem] ml-[0.1rem]" src={window.location.origin + '/Footer Logo.png'} alt='' />
-              <p tw='ml-[2.16rem] mt-[2.2rem] tracking-[0.105rem]'>
+              <Image tw="w-[16.3rem] mt-[0.9rem] ml-[0.1rem]" src={window.location.origin + '/Footer Logo.png'} alt='' />
+              <NoteFooter tw='md:text-left text-center  mt-[2.2rem] not-italic tracking-[0.105rem]'>
                 Beautice is a Beauty Clinic WordPress Theme.
-              </p>
-              <p tw='ml-[2.16rem] tracking-[0.1rem] text-[0.85rem] mt-[1.4rem] italic'>
+              </NoteFooter>
+              <NoteFooter tw=' tracking-[0.1rem] text-[0.85rem] mt-[1.4rem] italic'>
                 Baker Steet 101, NY, United States.
-              </p>
-              <p tw='ml-[2.16rem] flex gap-[2.7rem] text-[0.83rem] tracking-[0.11rem] mt-[0.3rem] italic'>
+              </NoteFooter>
+              <NoteFooter tw=' flex gap-[2.7rem] text-[0.83rem] tracking-[0.11rem] mt-[0.3rem] italic'>
                 <span>+521 569 8966.</span>
                 <span>
                   <a href='#' tw="decoration-solid underline">
                     mail@company.com.
                   </a>
                 </span>
-              </p>
+              </NoteFooter>
             </div>
             <div tw='flex flex-col lg:ml-[3.35rem] col-span-1 xs:items-center lg:items-start'>
-              <h5 tw="text-[1.1rem] tracking-[0.11rem]">Pages</h5>
+              <HeadingFooter tw="tracking-[0.11rem]">Pages</HeadingFooter>
               <UlStyles  >
                 <li>
                   <i className='fa-solid fa-caret-right'></i> Home
@@ -68,7 +71,7 @@ function Footer() {
               </UlStyles>
             </div>
             <div tw='flex flex-col lg:ml-[4.45rem] col-span-1 xs:items-center lg:items-start'>
-              <h5 tw="text-[1.1rem] tracking-[0.14rem]">Informations</h5>
+              <HeadingFooter tw="tracking-[0.14rem]">Informations</HeadingFooter>
               <UlStyles>
                 <li>
                   <i className='fa-solid fa-caret-right'></i> Terms & conditions

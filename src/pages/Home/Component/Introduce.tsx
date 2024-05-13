@@ -9,7 +9,7 @@ function Introduce() {
       <Wrapper tw='justify-between xs:flex-col md:flex-row gap-y-10'>
         <div tw='flex flex-col md:basis-[43%] xs:basis-full md:gap-y-[0.35rem] xs:gap-y-3 xs:items-center md:items-start justify-center md:ml-[2.6rem] mt-[-1.35rem]'>
           <h1 tw='text-[2.98rem] text-primary-mainColor font-semibold w-full xs:text-center md:text-left leading-[3.8rem] tracking-[0.016rem]'>Clinic & beauty consultant</h1>
-          <p tw='text-primary-mainColor text-[1.05rem] sm:w-2/3 xs:w-full md:w-full tracking-[0.076rem] font-medium xs:text-center w-full md:text-left mb-[1.7rem]'>
+          <p tw='text-primary-mainColor text-[1.05rem] sm:w-2/3 xs:w-[80%] md:w-full tracking-[0.076rem] font-medium xs:text-center w-full md:text-left mb-[1.7rem]'>
             It is a long established fact that a reader will be by the readable
             content of a page.
           </p>

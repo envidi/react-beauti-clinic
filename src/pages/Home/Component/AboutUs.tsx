@@ -25,7 +25,7 @@ function AboutUs() {
           </Paragraph>
          
           <div tw='flex md:justify-start xs:justify-center items-center gap-x-[2.7rem] mt-[2.85rem] w-full'>
-            <Button large={true} tw="w-fit tracking-[0.1rem] text-[1rem] px-[3rem] py-[1.01rem]">
+            <Button variant="large" tw="w-fit tracking-[0.1rem] text-[1rem] px-[3rem] py-[1.01rem]">
               Learn More
             </Button>
             <div  tw='flex gap-x-[0.9rem] items-center '>

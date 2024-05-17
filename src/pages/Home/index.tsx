@@ -12,7 +12,7 @@ function Home() {
       <Introduce />
       <MainService/>
       <AboutUs/>
-      <Team/>
+      <Team page="home"/>
       <Contact/>
     </main>
   );

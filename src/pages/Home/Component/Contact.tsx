@@ -67,7 +67,7 @@ function Contact() {
             </div>
             <Button
               tw='w-fit px-[3.45rem] mt-[1.25rem] pb-[1.1rem] tracking-[0.12rem] text-[1rem]'
-              large={true}
+              variant="large"
             >
               Send Message
             </Button>

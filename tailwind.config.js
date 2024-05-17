@@ -3,30 +3,33 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
-      xs: '200px',
+      xs: "200px",
       // => @media (min-width: 400px) { ... }
-      sm: '600px',
+      sm: "600px",
       // => @media (min-width: 640px) { ... }
-      md: '768px',
+      md: "768px",
       // => @media (min-width: 768px) { ... }
-      lg: '1024px',
+      lg: "1024px",
       // => @media (min-width: 1024px) { ... }
-      xl: '1280px',
+      xl: "1270px",
       // => @media (min-width: 1280px) { ... }
-      '2xl': '1450px'
+      xxl: "1370px",
+      // => @media (min-width: 1370px) { ... }
+      "2xl": "1450px",
+      // => @media (min-width: 1440px) { ... }
+      "3xl": "1750px",
       // => @media (min-width: 1440px) { ... }
     },
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'], // Thêm font Poppins vào đây
-        serif: ['Roboto', 'sans-serif'], // Thêm font Roboto vào đây
+        sans: ["Poppins", "sans-serif"], // Thêm font Poppins vào đây
+        serif: ["Roboto", "sans-serif"], // Thêm font Roboto vào đây
       },
     },
     colors: {
       border: {
         DEFAULT: "hsl(var(--border))",
         calendarBorder: "var(--calendar-border)",
-       
       },
       input: "hsl(var(--input))",
       shadow: {
@@ -36,25 +39,25 @@ export default {
       background: {
         DEFAULT: "hsl(var(--background))",
         main: "#ffffff",
-        
-    
       },
       foreground: {
         DEFAULT: "hsl(var(--foreground))",
       },
-      primary: {  
+      primary: {
         DEFAULT: "hsl(var(--primary))",
         mainColor: "#091156",
-        textColor: '#8b8b8b',
-        footerColor: '#172176',
+        textColor: "#8b8b8b",
+        footerColor: "#172176",
+        slogan : "#ABB4FF"
       },
       secondary: {
         DEFAULT: "hsl(var(--secondary))",
         mainColor: "#ff64ae",
-        footerColor: '#0d165c',
+        footerColor: "#0d165c",
+        cardHome2: "#E2E2E2",
+        hoverCardHome: "#9BA2E0",
+        secondNav : '#D8DCFF'
       },
-     
-     
     },
   },
   plugins: [],

@@ -1,13 +1,17 @@
 import "twin.macro";
 import { Routes, Route } from "react-router-dom";
-import ClientLayout from "./Layouts/ClientLayout";
 import Home from "./pages/Home/index.tsx";
+import ClientLayout from "./layouts/ClientLayout/index.tsx";
+import SecondHome from "./pages/Home2/index.tsx";
+import About from "./pages/About/index.tsx";
 function App() {
   return (
     <>
       <Routes>
         <Route path='/' element={<ClientLayout />}>
           <Route index element={<Home />} />
+          <Route path="/second" element={<SecondHome />} />
+          <Route path="/about" element={<About />} />
           {/* <Route path='about' element={<About />} />
           <Route path='dashboard' element={<Dashboard />} /> */}
 

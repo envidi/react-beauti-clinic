@@ -26,7 +26,7 @@ function OurClient() {
               <ImageSrc clx=' w-full' src='/LOGO1.png' />
             </div>
             <div tw='basis-[13%]'>
-              <ImageSrc clx=' w-full ' src='/LOGO2.png' />
+              <ImageSrc clx=' w-full translate-x-[-0.15rem]' src='/LOGO2.png' />
             </div>
             <div tw='basis-[13%]'>
               <ImageSrc clx=' w-full' src='/LOGO3.png' />

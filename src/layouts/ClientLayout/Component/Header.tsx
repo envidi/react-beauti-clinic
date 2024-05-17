@@ -63,7 +63,9 @@ function Header() {
               <Link to={"/about"}>
                 <li tw='lg:text-[1rem]  tracking-[0.09rem]'>About</li>
               </Link>
-              <li tw='lg:text-[1rem]  tracking-[0.09rem]'>Service</li>
+              <Link to={"/second"}>
+                <li tw='lg:text-[1rem]  tracking-[0.09rem]'>Service</li>
+              </Link>
               <li tw='lg:text-[1rem]  tracking-[0.09rem]'>Gallery</li>
               <li tw='lg:text-[1rem]  tracking-[0.09rem]'>Blog</li>
             </ul>

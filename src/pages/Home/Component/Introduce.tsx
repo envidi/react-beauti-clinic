@@ -7,7 +7,7 @@ import MainHeading from '../../../components/MainHeading';
 import MainParagraph from '../../../components/MainParagraph';
 function Introduce() {
   return (
-    <Section tw='mt-[6.9rem] '>
+    <Section tw='mt-[6.95rem] '>
       <Wrapper tw='justify-between xs:flex-col md:flex-row gap-y-10'>
         <div tw='flex flex-col md:basis-[43%] xs:basis-full md:gap-y-[0.35rem] xs:gap-y-3 xs:items-center md:items-start justify-center md:ml-[2.6rem] mt-[-1.35rem]'>
           <MainHeading>Clinic & beauty consultant</MainHeading>

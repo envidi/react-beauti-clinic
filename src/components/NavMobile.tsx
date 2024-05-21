@@ -1,46 +1,67 @@
 import { useEffect, useRef, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import tw, { styled } from "twin.macro";
 
 const ulStyles = tw`
 bg-background-main
-  [> li]:(rounded-2xl pl-9 mx-3 transition-all border-b-[rgba(255, 255, 255, 0.1)] border-b hover:pl-10  hover:bg-secondary-mainColor  duration-300 py-1.5)
-  [> li > a]:(block text-primary-mainColor hover:text-background-main text-[0.85rem] p-3 uppercase font-bold)
+  [> li]:(rounded-2xl  px-5 transition-all border-b-[rgba(255, 255, 255, 0.1)] text-primary-mainColor relative border-b hover:pl-10  hover:bg-secondary-mainColor  duration-300 py-1.5)
+  [> li > a]:(block pl-9 rounded-2xl  hover:text-background-main text-[0.85rem] p-3 uppercase font-bold)
   [> li > a > span]:( mr-[0.5rem])`;
 const menuStyle = tw`
     [> i]:(hover:cursor-pointer flex items-center justify-center bg-primary-mainColor lg:p-2 lg:px-3 xs:p-1 xs:px-2 text-background-main rounded text-sm)
 `;
 const MenuComponent = styled.div<{ open: boolean }>(({ open }) => [
-  tw`flex fixed left-0 top-0 h-full duration-300 ease-in-out w-64  pt-3 flex-col translate-x-[-100%] bg-background-main shadow-lg`, // Add base styles first
+  tw`flex fixed left-0 z-50 top-0 h-full duration-300 ease-in-out w-64  pt-3 flex-col translate-x-[-100%] bg-background-main shadow-lg`, // Add base styles first
   open && tw`translate-x-[0%] duration-300 ease-in-out`, // Then add conditional styles
+]);
+const LiNavMobile = styled.li<{ isActive: boolean }>(({ isActive }) => [
+  tw`flex w-full`, // Add base styles first
+  isActive &&
+    tw`bg-secondary-mainColor 
+     [> a]:(text-background-main)`, // Then add conditional styles
 ]);
 const arrayLinks = [
   {
     icon: <i className='fas fa-home'></i>,
     title: "Home",
+    url: ["/", "/second"],
+    link: "#",
   },
   {
     icon: <i className='fas fa-address-card'></i>,
     title: "About",
+    url: [],
+    link: "/about",
   },
   {
     icon: <i className='fas fa-cog'></i>,
     title: "Service",
+    url: [],
+    link: "/service",
   },
   {
     icon: <i className='fas fa-address-book'></i>,
     title: "Gallery",
+    url: [],
+    link: "/gallery",
   },
   {
     icon: <i className='fa-solid fa-book'></i>,
     title: "Blog",
+    url: [],
+    link: "#",
   },
   {
     icon: <i className='fa-regular fa-address-book'></i>,
     title: "Contact",
+    url: [],
+    link: "#",
   },
 ];
 
 function NavMobile() {
+  const location = useLocation();
+  const locationName = location.pathname
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -86,12 +107,42 @@ function NavMobile() {
         <ul css={ulStyles} tw=''>
           {arrayLinks.map((link, index: number) => {
             return (
-              <li key={index}>
-                <a href='#'>
+              <LiNavMobile
+                key={index}
+                isActive={
+                  locationName == link.link ||
+                  link.url.includes(locationName)
+                }
+                className='group'
+              >
+                <Link to={link.link}>
                   <span>{link.icon}</span>
                   {link.title}
-                </a>
-              </li>
+                </Link>
+                {link?.url[0] === "/" && (
+                  <ul
+                    css={ulStyles}
+                    tw='absolute top-0 left-full hidden group-hover:block w-full h-fit shadow-lg rounded-2xl'
+                  >
+                    <LiNavMobile isActive={locationName == "/"}>
+                      <Link to={"/"}>
+                        <span>
+                          <i className='fas fa-home'></i>
+                        </span>
+                        Home
+                      </Link>
+                    </LiNavMobile>
+                    <LiNavMobile isActive={locationName == "/second"}>
+                      <Link to={"/second"}>
+                        <span>
+                          <i className='fas fa-home'></i>
+                        </span>
+                        Home2
+                      </Link>
+                    </LiNavMobile>
+                  </ul>
+                )}
+              </LiNavMobile>
             );
           })}
         </ul>

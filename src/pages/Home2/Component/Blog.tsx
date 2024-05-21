@@ -14,8 +14,8 @@ const Card = styled.div<{ large?: boolean }>(({ large }) => [
   `,
   large && tw``, // Then add conditional styles
 ]);
-const Cards = tw.div`z-10 sm:w-[60%] xs:w-full md:w-full grid xl:grid-cols-3  md:grid-cols-3 justify-between xs:grid-cols-1 justify-items-center xl:gap-x-[3rem] 2xl:gap-x-[2.1rem] lg:gap-x-[2rem] md:gap-x-[1.5rem]  xs:gap-y-[2rem] mt-[5.37rem] xl:pr-[0rem] xl:pl-[0.2rem] `;
-const CardTitle = tw.div`text-primary-mainColor text-[1.12rem] font-semibold text-left`;
+const Cards = tw.div`z-10 sm:w-[60%] xs:w-full md:w-full grid xl:grid-cols-3  md:grid-cols-3 justify-between xs:grid-cols-1 justify-items-center xl:gap-x-[3rem] 2xl:gap-x-[2.1rem] lg:gap-x-[2rem] md:gap-x-[1.5rem]  xs:gap-y-[2rem] mt-[5.45rem] xl:pr-[0rem] xl:pl-[0.2rem] `;
+const CardTitle = tw.div`text-primary-mainColor text-[1.12rem] font-semibold text-left tracking-[0.001rem]`;
 const CardParagraph = tw.div`text-primary-textColor leading-[1.35rem] text-[0.93rem] tracking-[0.06rem] ml-[0.19rem] text-left mt-[0.8rem]`;
 const datas = [
   {
@@ -38,14 +38,14 @@ function Blog() {
   return (
     <div tw='relative'>
       <ImageSrc src="/Wave_Line_2.png" clx="absolute top-[-9rem] right-0 w-[36.5%] -z-10"/>
-      <Section tw='mt-[3.5rem] z-50'>
+      <Section tw='mt-[3.51rem] z-50'>
         <Wrapper tw='flex flex-col items-center '>
-          <TitleHeading tw='ml-[0.2rem]'>The Blog</TitleHeading>
+          <TitleHeading tw='ml-[0.2rem] '>The Blog</TitleHeading>
 
-          <SecondHeading tw='xl:w-[40%] md:w-[50%] xs:w-[80%] leading-[2.8rem] ml-[0.2rem] mt-[0.6rem] tracking-[0.02rem]'>
+          <SecondHeading tw='xl:w-[40%] md:w-[50%] xs:w-[80%] leading-[2.8rem] ml-[0.2rem] mt-[0.6rem] tracking-[0.025rem] font-semibold'>
             Our latest news
           </SecondHeading>
-          <Paragraph tw='w-[75%] mt-[1.2rem] ml-[0.14rem] '>
+          <Paragraph tw='w-[75%] mt-[1.13rem] ml-[0.17rem] '>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Paragraph>
           <Cards tw='z-50'>

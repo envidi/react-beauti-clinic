@@ -63,7 +63,7 @@ function Team({ page }: { page?: string }) {
       ]}
     >
       <Wrapper team={true}>
-        <Column tw="items-center">
+        <Column tw="items-center w-full">
           <TitleHeading tw='ml-[0.1rem]'>Professional Teams</TitleHeading>
           <SecondHeading tw='tracking-[0.01rem] mt-[0.35rem] ml-[0.1rem]'>
             The Professional expert

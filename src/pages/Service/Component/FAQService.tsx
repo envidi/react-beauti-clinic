@@ -25,7 +25,7 @@ function FAQService() {
             defaultValue='item-1'
           >
             <AccordionItem value='item-1'>
-              <AccordionTrigger className='pr-[1.4rem] text-left no-underline data-[state=open]:border-[black]  data-[state=open]:border-b md:pl-[2.2rem] xs:pl-[1.2rem] text-primary-mainColor text-[1.01rem] font-semibold tracking-[0.097rem] py-[0.9rem]'>
+              <AccordionTrigger className='pr-[1.4rem] text-left no-underline data-[state=open]:border-[black]  data-[state=open]:border-b md:pl-[2.2rem] xs:pl-[1.2rem] text-primary-mainColor text-[1.01rem] font-semibold tracking-[0.095rem] py-[0.9rem]'>
                 Is beauty consultation handled thoroughly?
               </AccordionTrigger>
               <AccordionContent className='bg-[#F6F7FF] rounded-b-[20px] italic tracking-[0.095rem]  text-primary-textColor pt-[3.3rem] pb-[3.7rem]  md:pl-[4.8rem] md:pr-[7.9rem] xs:pl-[1.8rem] xs:pr-[1.9rem] text-[0.85rem] leading-[1.3rem]'>
@@ -38,7 +38,7 @@ function FAQService() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-2'>
-              <AccordionTrigger className='pr-[1.4rem] text-left mt-[1rem] no-underline data-[state=open]:border-[black]  data-[state=open]:border-b md:pl-[2.2rem] xs:pl-[1.2rem] text-primary-mainColor text-[1.01rem] font-semibold tracking-[0.097rem] py-[0.9rem]'>
+              <AccordionTrigger className='pr-[1.4rem] text-left mt-[0.9rem] no-underline data-[state=open]:border-[black]  data-[state=open]:border-b md:pl-[2.2rem] xs:pl-[1.2rem] text-primary-mainColor text-[1.01rem] font-semibold tracking-[0.095rem] py-[0.9rem]'>
                 Can I be beautiful in an instant time?
               </AccordionTrigger>
               <AccordionContent className='bg-[#F6F7FF] rounded-b-[20px] italic tracking-[0.095rem]  text-primary-textColor pt-[3.3rem] pb-[3.7rem]  md:pl-[4.8rem] md:pr-[7.9rem] xs:pl-[1.8rem] xs:pr-[1.9rem] text-[0.85rem] leading-[1.3rem]'>
@@ -51,7 +51,7 @@ function FAQService() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-3'>
-              <AccordionTrigger className='pr-[1.4rem] text-left mt-[0.1rem]  no-underline data-[state=open]:border-[black]  data-[state=open]:border-b md:pl-[2.2rem] xs:pl-[1.2rem] text-primary-mainColor text-[1.01rem] font-semibold tracking-[0.097rem] py-[0.9rem]'>
+              <AccordionTrigger className='pr-[1.4rem] text-left mt-[0.1rem]  no-underline data-[state=open]:border-[black]  data-[state=open]:border-b md:pl-[2.2rem] xs:pl-[1.2rem] text-primary-mainColor text-[1.01rem] font-semibold tracking-[0.095rem] py-[0.9rem]'>
               Are there any side effects to the treatment methods or treatments at this clinic?
               </AccordionTrigger>
               <AccordionContent className='bg-[#F6F7FF] rounded-b-[20px] italic tracking-[0.095rem]  text-primary-textColor pt-[3.3rem] pb-[3.7rem]  md:pl-[4.8rem] md:pr-[7.9rem] xs:pl-[1.8rem] xs:pr-[1.9rem] text-[0.85rem] leading-[1.3rem]'>
@@ -64,7 +64,7 @@ function FAQService() {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value='item-4'>
-              <AccordionTrigger className='pr-[1.4rem] text-left  no-underline data-[state=open]:border-[black]  data-[state=open]:border-b md:pl-[2.2rem] xs:pl-[1.2rem]  text-primary-mainColor text-[1.01rem] font-semibold tracking-[0.097rem] py-[0.9rem]'>
+              <AccordionTrigger className='pr-[1.4rem] text-left mt-[0.1rem]  no-underline data-[state=open]:border-[black]  data-[state=open]:border-b md:pl-[2.2rem] xs:pl-[1.2rem]  text-primary-mainColor text-[1.01rem] font-semibold tracking-[0.095rem] py-[0.9rem]'>
               Do professionals have accreditation in their respective fields?
               </AccordionTrigger>
               <AccordionContent className='bg-[#F6F7FF] rounded-b-[20px] italic tracking-[0.095rem]  text-primary-textColor pt-[3.3rem] pb-[3.7rem]  md:pl-[4.8rem] md:pr-[7.9rem] xs:pl-[1.8rem] xs:pr-[1.9rem] text-[0.85rem] leading-[1.3rem]'>

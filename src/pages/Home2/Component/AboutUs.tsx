@@ -8,7 +8,7 @@ import Section from "../../../components/Section";
 import ImageSrc from "../../../components/ImageSrc";
 function AboutUs() {
   return (
-    <Section tw='mt-[0.7rem]'>
+    <Section tw='mt-[1.22rem]'>
       <Wrapper tw=' flex md:flex-row-reverse xs:flex-col justify-between gap-y-14'>
         <div tw='flex flex-col ml-[0.2rem]  md:items-start xs:items-center  basis-[42.2%] gap-y-[0.3rem]'>
           <TitleHeading tw='md:text-left'>About Us</TitleHeading>
@@ -22,10 +22,10 @@ function AboutUs() {
             suspendisse placerat.
           </Paragraph>
 
-          <div tw='flex md:justify-start xs:justify-center items-center gap-x-[2.7rem] mt-[2.85rem] w-full'>
+          <div tw='flex md:justify-start xs:justify-center items-center gap-x-[2.7rem] mt-[2.65rem] w-full'>
             <Button
               variant='large'
-              tw='w-fit tracking-[0.1rem] text-[1rem] px-[3rem] py-[1.01rem]'
+              tw='w-fit tracking-[0.118rem] text-[0.98rem] pl-[3.08rem] pr-[2.95rem] py-[1.1rem]'
             >
               Learn More
             </Button>

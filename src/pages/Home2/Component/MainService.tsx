@@ -41,10 +41,10 @@ function MainService() {
         <Wrapper tw='flex flex-col items-center '>
           <TitleHeading tw='ml-[0.2rem]'>Main Services</TitleHeading>
 
-          <SecondHeading tw='xl:w-[40%] md:w-[50%] xs:w-[80%] leading-[2.8rem] ml-[0.2rem] mt-[0.6rem] tracking-[0.02rem]'>
+          <SecondHeading tw='xl:w-[40%] md:w-[50%] xs:w-[80%] leading-[2.8rem] font-semibold ml-[0.2rem] mt-[0.57rem] tracking-[0.02rem]'>
             Our focus services
           </SecondHeading>
-          <Paragraph tw='w-[75%] mt-[1.3rem] ml-[0.14rem] '>
+          <Paragraph tw='w-[75%] mt-[1.35rem] ml-[0.18rem] '>
             Lorem ipsum dolor sit amet.
           </Paragraph>
           <Cards tw='z-50'>

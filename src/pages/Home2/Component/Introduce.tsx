@@ -20,7 +20,7 @@ function Introduce() {
             massa pellentesque arcu fusce et magna consequat neque vitae
             lobortis.
           </MainParagraph>
-          <Button variant='outline' tw='w-fit rounded-[15px] mt-[0.3rem] px-[1.88rem]'>
+          <Button variant='outline' tw='w-fit rounded-[15px] mt-[0.3rem] tracking-[0.12rem] pb-[0.83rem] pt-[0.83rem] text-[0.98rem] px-[1.8rem]'>
             More Details
           </Button>
         </Column>
@@ -36,7 +36,7 @@ function Introduce() {
             >
               <ImageSrc src='/Polygon_1.png' clx="md:ml-[0.5rem] w-[34%]" />
             </div>
-            <span tw="text-background-main text-[1.05rem] tracking-[0.08rem] mt-[0.1rem]">Tour Video</span>
+            <span tw="text-background-main text-[1rem] tracking-[0.11rem] mt-[0.1rem]">Tour Video</span>
           </div>
         </Column>
       </Wrapper>

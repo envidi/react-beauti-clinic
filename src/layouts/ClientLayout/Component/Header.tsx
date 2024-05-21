@@ -1,9 +1,10 @@
 // import tw from 'twin.macro'
 import { Link, useLocation } from "react-router-dom";
-import tw, { TwStyle } from "twin.macro";
+import tw, { TwStyle, styled } from "twin.macro";
 import Button from "../../../components/Button";
 import Wrapper from "../../../components/Wrapper";
 import NavMobile from "../../../components/NavMobile";
+import ImageSrc from "../../../components/ImageSrc";
 
 type WrapperVariant = "light" | "dark";
 interface UlProps {
@@ -13,23 +14,64 @@ interface LiProps {
   livariant?: WrapperVariant;
 }
 const ulvariants: Record<WrapperVariant, TwStyle> = {
-  dark: tw` text-primary-textColor`,
-  light: tw` text-secondary-secondNav`,
+  dark: tw` text-primary-textColor xl:gap-[2.95rem]`,
+  light: tw` text-secondary-secondNav xl:gap-[2.88rem]`,
 };
-const livariants: Record<WrapperVariant, TwStyle> = {
-  dark: tw` text-primary-mainColor`,
-  light: tw` text-background-main`,
+const currentLiVariants: Record<WrapperVariant, TwStyle> = {
+  dark: tw` text-primary-mainColor tracking-[0.09rem]`,
+  light: tw` text-background-main tracking-[0.1rem] mt-[-0.1rem]`,
+};
+const liVariants: Record<WrapperVariant, TwStyle> = {
+  dark: tw`lg:text-[1rem]  tracking-[0.09rem]`,
+  light: tw`lg:text-[1rem]  tracking-[0.101rem]`,
 };
 const styles = {
   ul: ({ variant = "dark" }: UlProps) => [
-    tw`flex text-lg items-center xl:gap-[2.9rem] md:gap-[1.5rem]`,
+    tw`flex text-lg items-center  md:gap-[1.5rem]`,
     ulvariants[variant], // Grab the variant style via a prop
   ],
+  currentLi: ({ livariant = "dark" }: LiProps) => [
+    tw`lg:text-[1rem]  relative`,
+    currentLiVariants[livariant], // Grab the variant style via a prop
+  ],
   li: ({ livariant = "dark" }: LiProps) => [
-    tw`lg:text-[1rem]  tracking-[0.09rem]`,
-    livariants[livariant], // Grab the variant style via a prop
+    tw`lg:text-[1rem]  relative`,
+    liVariants[livariant], // Grab the variant style via a prop
   ],
 };
+const LiHome = styled.li<{ isActive: boolean }>(({ isActive }) => [
+  tw`hover:text-background-main hover:bg-secondary-mainColor duration-200 ease-in-out text-left px-[1rem] py-2`, // Add base styles first
+  isActive && tw`bg-secondary-mainColor text-background-main`, // Then add conditional styles
+]);
+const dataLi = [
+  {
+    id: 1,
+    page: "Home",
+    link: "#",
+    url: '/'
+  },
+
+  {
+    id: 3,
+    page: "About",
+    link: "/about",
+  },
+  {
+    id: 4,
+    page: "Service",
+    link: "/service",
+  },
+  {
+    id: 5,
+    page: "Gallery",
+    link: "/gallery",
+  },
+  {
+    id: 6,
+    page: "Blog",
+    link: "/blog",
+  },
+];
 
 function Header() {
   const location = useLocation();
@@ -37,6 +79,24 @@ function Header() {
     location.pathname === "/second" ? "/Second_logo.png" : "/logo.png";
   const variant = location.pathname === "/second" ? "light" : "dark";
   const livariant = location.pathname === "/second" ? "light" : "dark";
+  const locationName = location.pathname;
+  const isPage = (page: string, currentPage: string) => page == currentPage;
+  const isLocationSecond = locationName == "/second";
+  const isNotLocationSecond = locationName !== "/second";
+  const isHomeAndLocation = (page: string) =>
+    isPage(page, "Home") && isLocationSecond
+      ? "flex items-center mr-[-0.2rem] mt-[-0.1rem]"
+      : "";
+  const isHomeAndNotLocation = (page: string) =>
+    isPage(page, "Home") && isNotLocationSecond
+      ? "flex items-center mr-[-0.28rem] mt-[-0rem]"
+      : "";
+  const isAboutAndLocation = (page: string) =>
+    isPage(page, "About") && isLocationSecond
+      ? "mt-[-0.1rem] mr-[-0.15rem]"
+      : "";
+  const isAboutAndNotLocation = (page: string) =>
+    isPage(page, "About") && isNotLocationSecond ? "mr-[-0.12rem]" : "";
   return (
     <header tw='flex w-full justify-center'>
       {/* <div tw='container large-container'> */}
@@ -44,33 +104,66 @@ function Header() {
         <nav tw='flex items-center lg:py-[2.3rem] md:py-4 xs:py-3 justify-between w-full gap-2'>
           <NavMobile />
           <div tw='w-full md:block hidden '>
-            <img
-              tw='xl:w-[16.4rem] md:w-[13.4rem] object-cover mt-1'
-              src={window.location.origin + logo}
+            <ImageSrc
+              clx={` md:w-[13.4rem] object-cover mt-1 ${
+                location.pathname === "/second"
+                  ? "xl:w-[16.2rem] ml-[0.1rem]"
+                  : "xl:w-[16.4rem]"
+              }`}
+              src={logo}
               alt=''
             />
           </div>
-          <div tw='md:flex md:gap-[1.5rem] xl:gap-[3.4rem] mt-[-0.5rem] hidden'>
+          <div
+            className={`md:flex md:gap-[1.5rem]   hidden ${
+              location.pathname === "/second"
+                ? "xl:gap-[3.3rem] mt-[-0.00rem]"
+                : "xl:gap-[3.35rem] mt-[-0.5rem]"
+            }`}
+          >
             <ul css={styles.ul({ variant })}>
-              <Link to={"/"}>
-                <li
-                  css={styles.li({ livariant })}
-                  tw='flex items-center mr-[-0.25rem]'
-                >
-                  Home <span tw='ml-[0.1rem] mt-[0.2rem]'> +</span>
-                </li>
-              </Link>
-              <Link to={"/about"}>
-                <li tw='lg:text-[1rem]  tracking-[0.09rem]'>About</li>
-              </Link>
-              <Link to={"/second"}>
-                <li tw='lg:text-[1rem]  tracking-[0.09rem]'>Service</li>
-              </Link>
-              <li tw='lg:text-[1rem]  tracking-[0.09rem]'>Gallery</li>
-              <li tw='lg:text-[1rem]  tracking-[0.09rem]'>Blog</li>
+              {dataLi.map((li) => {
+                return (
+                  <Link to={li.link} key={li.id}>
+                    <li
+                      css={
+                        locationName === li.link || locationName === li.url
+                          ? styles.currentLi({ livariant })
+                          : styles.li({ livariant })
+                      }
+                      className={`group  ${isHomeAndLocation(
+                        li.page,
+                      )} ${isAboutAndLocation(li.page)} 
+                      ${isHomeAndNotLocation(li.page)} 
+                      ${isAboutAndNotLocation(li.page)}`}
+                    >
+                      {li.page}{" "}
+                      {li.page == "Home" && (
+                        <span tw='ml-[0.1rem] mt-[0.25rem]'> +</span>
+                      )}
+                      {li.page == "Home" && (
+                        <ul tw='absolute top-9 xs:hidden shadow-lg group-hover:block  left-[-1rem] w-fit h-fit bg-background-main  text-secondary-mainColor rounded-md overflow-hidden'>
+                          <Link to={"/"}>
+                            <LiHome isActive={locationName === '/'} >
+                              Home
+                            </LiHome>
+                          </Link>
+                          <Link to={"/second"}>
+                            <LiHome isActive={locationName === '/second'}>
+                              Home2
+                            </LiHome>
+                          </Link>
+                        </ul>
+                      )}
+                    </li>
+                  </Link>
+                );
+              })}
             </ul>
 
-            <Button>Contact</Button>
+            <Button tw='py-[0.89rem] pt-[0.9rem] text-[0.95rem] tracking-[0.13rem]'>
+              Contact
+            </Button>
           </div>
         </nav>
       </Wrapper>

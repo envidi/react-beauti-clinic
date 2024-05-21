@@ -5,6 +5,7 @@ import ClientLayout from "./layouts/ClientLayout/index.tsx";
 import SecondHome from "./pages/Home2/index.tsx";
 import About from "./pages/About/index.tsx";
 import Service from "./pages/Service/index.tsx";
+import Gallery from "./pages/Gallery/index.tsx";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
           <Route path="/second" element={<SecondHome />} />
           <Route path="/about" element={<About />} />
           <Route path="/service" element={<Service />} />
+          <Route path="/gallery" element={<Gallery />} />
           {/* <Route path='about' element={<About />} />
           <Route path='dashboard' element={<Dashboard />} /> */}
 

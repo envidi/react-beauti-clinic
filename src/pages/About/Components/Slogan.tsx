@@ -24,12 +24,12 @@ function Slogan() {
     }}> 
       <Overlay/>
       <Section tw='w-full flex items-center z-20'>
-        <Wrapper tw=' w-full flex flex-col justify-center items-center h-[33.89rem] mt-[-0.78rem] ml-[0.3rem] gap-y-[0.85rem]'>
+        <Wrapper tw=' w-full flex flex-col justify-center items-center h-[33.89rem] mt-[-0.78rem] ml-[0.2rem] gap-y-[0.85rem]'>
           <TitleHeading tw="text-primary-slogan z-20">Business Slogan</TitleHeading>
           <SecondHeading tw="text-background-main z-20 md:w-[50%] sm:w-[80%] font-semibold tracking-[0.02rem] mt-[-0.2rem] leading-[2.8rem]">
             Best responsibility and service for our customers
           </SecondHeading>
-          <Paragraph tw="text-primary-textColor z-20 md:w-[60%] sm:w-[80%] mt-[0.5rem]">
+          <Paragraph tw="text-primary-treatment z-20 md:w-[60%] sm:w-[80%] mt-[0.5rem]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
             purus sit amet luctus venenatis
           </Paragraph>

@@ -8,7 +8,7 @@ import Section from "../../../components/Section";
 import Image from "../../../components/Image";
 function AboutUs() {
   return (
-    <Section tw='mt-[8.3rem]'>
+    <Section tw='mt-[8.2rem]'>
       <Wrapper tw=' flex md:flex-row xs:flex-col justify-between'>
         <div tw='flex flex-col ml-[0.2rem]  md:items-start xs:items-center  basis-[48%] gap-y-[0.5rem]'>
           <TitleHeading tw="md:text-left">About Us</TitleHeading>

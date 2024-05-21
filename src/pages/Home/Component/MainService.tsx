@@ -13,7 +13,7 @@ const Card = styled.div<{ large?: boolean }>(({ large }) => [
   `,
   large && tw``, // Then add conditional styles
 ]);
-const Cards = tw.div`z-10 grid md:grid-cols-3 xs:grid-cols-1 justify-items-center lg:gap-x-[2.5rem] md:gap-x-[1.5rem] xl:gap-x-[3.5rem] xs:gap-y-[1rem] mt-[5rem] md:pr-1 md:pl-1`;
+const Cards = tw.div`z-10 grid md:grid-cols-3 xs:grid-cols-1 justify-items-center lg:gap-x-[2.5rem] md:gap-x-[1.5rem] xl:gap-x-[3.5rem] xs:gap-y-[1rem] mt-[5.1rem] md:pr-[0.1rem] md:pl-[0.1rem]`;
 const CardTitle = tw.div`text-primary-mainColor text-[1.12rem] font-semibold`;
 const CardParagraph = tw.div`text-primary-textColor leading-[1.35rem] text-[0.93rem] tracking-[0.06rem] ml-[0.19rem] text-center mt-[1.12rem]`;
 const datas = [
@@ -50,7 +50,7 @@ function MainService() {
         <Wrapper tw='flex flex-col items-center '>
           <TitleHeading tw='ml-[0.2rem]'>Main Services</TitleHeading>
 
-          <SecondHeading tw='xl:w-[40%] md:w-[50%] xs:w-[80%] leading-[2.8rem] ml-[0.2rem] mt-[0.7rem] tracking-[0.02rem]'>
+          <SecondHeading tw='xl:w-[40%] md:w-[50%] xs:w-[80%] leading-[2.8rem] ml-[0.2rem] mt-[0.6rem] tracking-[0.02rem]'>
             Learn services to focus on your beauty
           </SecondHeading>
           <Paragraph tw='w-[75%] mt-[1.2rem] ml-[0.14rem] '>

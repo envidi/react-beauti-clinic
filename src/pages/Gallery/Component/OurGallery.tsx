@@ -60,7 +60,7 @@ function OurGallery() {
             <SecondHeading tw='md:text-left md:basis-[60%] font-semibold mt-[0.6rem] tracking-[0.025rem] leading-[2.8rem]'>
               Check out the collection pictures from our clinic
             </SecondHeading>
-            <Paragraph tw='md:text-left md:basis-[37.39%] flex items-center mt-[-0.6rem]'>
+            <Paragraph tw='md:text-left md:basis-[37.39%] flex items-center xl:mt-[-0.6rem] sm:mt-[1.2rem]'>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit ut
               aliquam, purus sit amet luctus venenatis
             </Paragraph>

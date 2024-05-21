@@ -11,7 +11,7 @@ function SecondHome() {
     <div >
       <div
         css={[
-          tw`relative top-[-8.75rem] xs:h-[60rem] sm:h-[57.18rem] 2xl:h-[50rem]  w-full `,
+          tw`relative top-[-8.79rem] xs:h-[60rem] sm:h-[57.28rem] 2xl:h-[50rem]  w-full `,
           css({
             backgroundImage: 'url("./introduce-bg.png")',
             backgroundRepeat: "no-repeat",

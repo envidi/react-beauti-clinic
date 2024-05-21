@@ -14,16 +14,16 @@ interface LiProps {
   livariant?: WrapperVariant;
 }
 const ulvariants: Record<WrapperVariant, TwStyle> = {
-  dark: tw` text-primary-textColor xl:gap-[2.95rem]`,
-  light: tw` text-secondary-secondNav xl:gap-[2.88rem]`,
+  dark: tw` text-primary-textColor xl:gap-[2.9rem]`,
+  light: tw` text-secondary-secondNav xl:gap-[2.82rem]`,
 };
 const currentLiVariants: Record<WrapperVariant, TwStyle> = {
-  dark: tw` text-primary-mainColor tracking-[0.09rem]`,
+  dark: tw` text-primary-mainColor tracking-[0.11rem] font-semibold`,
   light: tw` text-background-main tracking-[0.1rem] mt-[-0.1rem]`,
 };
 const liVariants: Record<WrapperVariant, TwStyle> = {
-  dark: tw`lg:text-[1rem]  tracking-[0.09rem]`,
-  light: tw`lg:text-[1rem]  tracking-[0.101rem]`,
+  dark: tw`lg:text-[1rem]  tracking-[0.1rem]`,
+  light: tw`lg:text-[1rem]  tracking-[0.1rem]`,
 };
 const styles = {
   ul: ({ variant = "dark" }: UlProps) => [
@@ -31,11 +31,11 @@ const styles = {
     ulvariants[variant], // Grab the variant style via a prop
   ],
   currentLi: ({ livariant = "dark" }: LiProps) => [
-    tw`lg:text-[1rem]  relative`,
+    tw`lg:text-[0.97rem]  relative font-medium`,
     currentLiVariants[livariant], // Grab the variant style via a prop
   ],
   li: ({ livariant = "dark" }: LiProps) => [
-    tw`lg:text-[1rem]  relative`,
+    tw`lg:text-[0.97rem]  relative font-medium`,
     liVariants[livariant], // Grab the variant style via a prop
   ],
 };
@@ -48,7 +48,7 @@ const dataLi = [
     id: 1,
     page: "Home",
     link: "#",
-    url: '/'
+    url: "/",
   },
 
   {
@@ -85,18 +85,18 @@ function Header() {
   const isNotLocationSecond = locationName !== "/second";
   const isHomeAndLocation = (page: string) =>
     isPage(page, "Home") && isLocationSecond
-      ? "flex items-center mr-[-0.2rem] mt-[-0.1rem]"
+      ? "flex items-center mr-[-0.15rem] mt-[-0.1rem]"
       : "";
   const isHomeAndNotLocation = (page: string) =>
     isPage(page, "Home") && isNotLocationSecond
-      ? "flex items-center mr-[-0.28rem] mt-[-0rem]"
+      ? "flex items-center mr-[-0.3rem]"
       : "";
   const isAboutAndLocation = (page: string) =>
     isPage(page, "About") && isLocationSecond
-      ? "mt-[-0.1rem] mr-[-0.15rem]"
+      ? "mt-[-0.1rem] mr-[-0.1rem]"
       : "";
   const isAboutAndNotLocation = (page: string) =>
-    isPage(page, "About") && isNotLocationSecond ? "mr-[-0.12rem]" : "";
+    isPage(page, "About") && isNotLocationSecond ? "mr-[-0.22rem]" : "";
   return (
     <header tw='flex w-full justify-center'>
       {/* <div tw='container large-container'> */}
@@ -115,10 +115,10 @@ function Header() {
             />
           </div>
           <div
-            className={`md:flex md:gap-[1.5rem]   hidden ${
+            className={`md:flex md:gap-[1.5rem] hidden ${
               location.pathname === "/second"
                 ? "xl:gap-[3.3rem] mt-[-0.00rem]"
-                : "xl:gap-[3.35rem] mt-[-0.5rem]"
+                : "xl:gap-[3.25rem] mt-[-0.35rem]"
             }`}
           >
             <ul css={styles.ul({ variant })}>
@@ -131,7 +131,7 @@ function Header() {
                           ? styles.currentLi({ livariant })
                           : styles.li({ livariant })
                       }
-                      className={`group  ${isHomeAndLocation(
+                      className={`group after:absolute after:content-['']  after:top-[-0.9rem] after:left-[-0.8rem] after:w-[6rem] after:h-[3.8rem]  after:bg-none after:z-40 ${isHomeAndLocation(
                         li.page,
                       )} ${isAboutAndLocation(li.page)} 
                       ${isHomeAndNotLocation(li.page)} 
@@ -139,18 +139,18 @@ function Header() {
                     >
                       {li.page}{" "}
                       {li.page == "Home" && (
-                        <span tw='ml-[0.1rem] mt-[0.25rem]'> +</span>
+                        <span tw='ml-[0.1rem] mt-[0.15rem]'> +</span>
                       )}
                       {li.page == "Home" && (
-                        <ul tw='absolute top-9 xs:hidden shadow-lg group-hover:block  left-[-1rem] w-fit h-fit bg-background-main  text-secondary-mainColor rounded-md overflow-hidden'>
+                        <ul tw='absolute top-9 z-50 xs:hidden shadow-lg group-hover:block  left-[-1rem] w-fit h-fit bg-background-main  text-secondary-mainColor rounded-md overflow-hidden'>
                           <Link to={"/"}>
-                            <LiHome isActive={locationName === '/'} >
-                              Home
+                            <LiHome isActive={locationName === "/"}>
+                              Overview
                             </LiHome>
                           </Link>
                           <Link to={"/second"}>
-                            <LiHome isActive={locationName === '/second'}>
-                              Home2
+                            <LiHome isActive={locationName === "/second"}>
+                              Advice
                             </LiHome>
                           </Link>
                         </ul>

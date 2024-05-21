@@ -16,7 +16,7 @@ function ContactUs() {
         src='/Wave_Line_3.png'
         clx='absolute top-[-7.8rem] left-0 w-[21.9%] -z-10'
       />
-      <Section tw='mt-[10.25rem] mb-[3.6rem]'>
+      <Section tw='mt-[10.25rem] mb-[3.8rem]'>
         <Wrapper>
           <Row tw="items-center justify-between w-full gap-y-10">
             <Column tw='basis-[36%] ml-[0.2rem]'>

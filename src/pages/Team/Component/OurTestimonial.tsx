@@ -13,7 +13,7 @@ function OurTestimonial() {
   return (
     <>
       <div tw="relative">
-        <ImageSrc src="/team/wave-2.png" clx="absolute bottom-0 translate-y-[23%] right-0 xl:w-[38.4%] 2xl:w-[30%] z-10"/>
+        <ImageSrc src="/team/wave-2.png" clx="absolute bottom-0 translate-y-[23%] right-0 xl:w-[38.4%] w-[38.4%] 2xl:w-[30%] z-10"/>
         <Section tw='mt-[7.28rem] mb-[1rem] z-20'>
           <Wrapper>
             <Column tw='items-center w-full '>

@@ -153,6 +153,11 @@ function Header() {
                               Advice
                             </LiHome>
                           </Link>
+                          <Link to={"/team"}>
+                            <LiHome isActive={locationName === "/team"}>
+                              Team
+                            </LiHome>
+                          </Link>
                         </ul>
                       )}
                     </li>

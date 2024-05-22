@@ -24,7 +24,7 @@ const arrayLinks = [
   {
     icon: <i className='fas fa-home'></i>,
     title: "Home",
-    url: ["/", "/second"],
+    url: ["/", "/second", "/team"],
     link: "#",
   },
   {
@@ -129,7 +129,7 @@ function NavMobile() {
                         <span>
                           <i className='fas fa-home'></i>
                         </span>
-                        Home
+                        Overview
                       </Link>
                     </LiNavMobile>
                     <LiNavMobile isActive={locationName == "/second"}>
@@ -137,7 +137,15 @@ function NavMobile() {
                         <span>
                           <i className='fas fa-home'></i>
                         </span>
-                        Home2
+                        Advice
+                      </Link>
+                    </LiNavMobile>
+                    <LiNavMobile isActive={locationName == "/team"}>
+                      <Link to={"/team"}>
+                        <span>
+                          <i className='fas fa-home'></i>
+                        </span>
+                        Team
                       </Link>
                     </LiNavMobile>
                   </ul>

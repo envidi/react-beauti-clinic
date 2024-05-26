@@ -54,7 +54,7 @@ function OurGallery() {
   return (
     <Section tw="mt-[4.95rem]">
       <Wrapper>
-        <Column tw="ml-[0.2rem] items-center">
+        <Column tw="ml-[0.2rem] xs:items-center md:items-start">
           <TitleHeading tw='md:text-left'>Our Gallery</TitleHeading>
           <Row tw='justify-between'>
             <SecondHeading tw='md:text-left md:basis-[60%] font-semibold mt-[0.6rem] tracking-[0.025rem] leading-[2.8rem]'>

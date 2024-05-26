@@ -15,12 +15,12 @@ function Introduce() {
           <MainHeading tw='text-background-main'>
             Your beauty center place
           </MainHeading>
-          <MainParagraph tw='text-background-main mt-[0.2rem] xl:w-[92%] md:w-full font-light tracking-[0.125rem] text-[0.97rem]'>
+          <MainParagraph tw='text-background-main mt-[0.15rem] leading-[1.5rem] xl:w-[92%] md:w-full font-light tracking-[0.137rem] text-[0.945rem]'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Commodo,
             massa pellentesque arcu fusce et magna consequat neque vitae
             lobortis.
           </MainParagraph>
-          <Button variant='outline' tw='w-fit rounded-[15px] mt-[0.3rem] tracking-[0.12rem] pb-[0.83rem] pt-[0.83rem] text-[0.98rem] px-[1.8rem]'>
+          <Button variant='outline' tw='w-fit rounded-[15px] mt-[0.2rem] tracking-[0.12rem] pb-[0.83rem] pt-[0.83rem] text-[0.98rem] px-[1.8rem]'>
             More Details
           </Button>
         </Column>

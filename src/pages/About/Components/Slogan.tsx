@@ -29,7 +29,7 @@ function Slogan() {
           <SecondHeading tw="text-background-main z-20 md:w-[50%] sm:w-[80%] font-semibold tracking-[0.02rem] mt-[-0.2rem] leading-[2.8rem]">
             Best responsibility and service for our customers
           </SecondHeading>
-          <Paragraph tw="text-primary-treatment z-20 md:w-[60%] sm:w-[80%] mt-[0.5rem]">
+          <Paragraph tw="text-primary-treatment z-20 md:w-[60%] sm:w-[80%] mt-[0.4rem]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam,
             purus sit amet luctus venenatis
           </Paragraph>

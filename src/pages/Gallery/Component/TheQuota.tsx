@@ -12,15 +12,15 @@ import { css } from "twin.macro";
 function TheQuota() {
   return (
     <div tw='relative'>
-      <Section tw='xl:mt-[7.45rem] md:mt-[7.55rem] xs:mt-[6rem] mb-[1.9rem]'>
+      <Section tw='xl:mt-[7.4rem] md:mt-[7.55rem] xs:mt-[6rem] mb-[1.9rem]'>
         <Wrapper>
           <Row tw='md:flex-row justify-between gap-y-14'>
             <Column tw='md:items-start xs:items-center  basis-[60%] gap-y-[0.3rem] ml-[0.2rem]'>
               <TitleHeading tw='md:text-left'>Get The Quota</TitleHeading>
-              <SecondHeading tw='md:text-left xl:w-full font-semibold sm:w-[70%] md:w-full tracking-[0.03rem] text-[2.2rem] leading-[2.8rem] mt-[0.4rem]'>
+              <SecondHeading tw='md:text-left xl:w-full font-semibold sm:w-[70%] md:w-full tracking-[0.03rem] text-[2.2rem] leading-[2.8rem] mt-[0.3rem]'>
                 Want to be handled by our professional team immediately?
               </SecondHeading>
-              <Paragraph tw='md:text-left xs:w-[100%] sm:w-[75%] md:w-[85%] mt-[1.05rem]'>
+              <Paragraph tw='md:text-left xs:w-[100%] sm:w-[75%] md:w-[85%] mt-[1.1rem]'>
                 Id dui erat sed quam tellus in purus. Pellentesque congue
                 fringilla cras tellus enim.
               </Paragraph>

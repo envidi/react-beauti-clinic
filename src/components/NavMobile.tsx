@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import tw, { styled } from "twin.macro";
+import SheetMobile from "../pages/Blog/Component/SheetMobile";
 
 const ulStyles = tw`
 bg-background-main
@@ -49,19 +50,19 @@ const arrayLinks = [
     icon: <i className='fa-solid fa-book'></i>,
     title: "Blog",
     url: [],
-    link: "#",
+    link: "/blog",
   },
   {
     icon: <i className='fa-regular fa-address-book'></i>,
     title: "Contact",
     url: [],
-    link: "#",
+    link: "/contact",
   },
 ];
 
 function NavMobile() {
   const location = useLocation();
-  const locationName = location.pathname
+  const locationName = location.pathname;
   const [open, setOpen] = useState(false);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -81,7 +82,10 @@ function NavMobile() {
     };
   }, []);
   return (
-    <div ref={menuRef} tw='md:hidden xs:block relative'>
+    <div
+      ref={menuRef}
+      tw='md:hidden xs:flex relative justify-between w-full flex-row'
+    >
       <button
         onClick={() => setOpen(!open)}
         tw='bg-none border-none'
@@ -89,6 +93,8 @@ function NavMobile() {
       >
         <i className='fa-solid fa-bars '></i>
       </button>
+      {locationName === "/blog" && <SheetMobile />}
+
       <MenuComponent open={open}>
         <button
           onClick={() => setOpen(!open)}
@@ -110,8 +116,7 @@ function NavMobile() {
               <LiNavMobile
                 key={index}
                 isActive={
-                  locationName == link.link ||
-                  link.url.includes(locationName)
+                  locationName == link.link || link.url.includes(locationName)
                 }
                 className='group'
               >

@@ -17,7 +17,7 @@ function ChooseUs() {
   return (
     <Section
       css={[
-        tw`h-[50rem] mt-[4.98rem] xs:bg-cover md:bg-contain 2xl:bg-cover 2xl:bg-bottom`,
+        tw`h-[50rem] mt-[4.93rem] xs:bg-cover md:bg-contain 2xl:bg-cover 2xl:bg-bottom`,
         css`
           background-image: url("/Background_choose_us.png");
           background-repeat: no-repeat;

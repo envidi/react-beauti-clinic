@@ -34,6 +34,17 @@ html{
     font-size: 50%;
   }
 }
+::-webkit-scrollbar {
+  width: 3px; /* Chiều rộng của thanh trượt */
+}
+::-webkit-scrollbar-track {
+  background: #ffff; /* Màu nền của track */
+  border-radius: 10px; /* Bo tròn góc của track */
+}
+::-webkit-scrollbar-thumb {
+  background-color: #ff64ae; /* Màu nền của thumb */
+  border-radius: 10px; /* Bo tròn góc của thumb */
+}
 /* @tailwind base;
   @tailwind components;
   @tailwind utilities;

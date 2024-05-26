@@ -7,6 +7,8 @@ import About from "./pages/About/index.tsx";
 import Service from "./pages/Service/index.tsx";
 import Gallery from "./pages/Gallery/index.tsx";
 import TeamPage from "./pages/Team/index.tsx";
+import Blog from "./pages/Blog/index.tsx";
+import ContactPage from "./pages/Contact/index.tsx";
 function App() {
   return (
     <>
@@ -18,6 +20,8 @@ function App() {
           <Route path="/service" element={<Service />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/team" element={<TeamPage />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/contact" element={<ContactPage />} />
           {/* <Route path='about' element={<About />} />
           <Route path='dashboard' element={<Dashboard />} /> */}
 

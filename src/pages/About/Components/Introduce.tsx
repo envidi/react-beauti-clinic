@@ -21,7 +21,7 @@ function Introduce() {
           <Column>
             <Column tw='ml-[0.2rem] sm:items-center md:items-start'>
               <TitleHeading tw='md:text-left'>About</TitleHeading>
-              <SecondHeading tw='md:text-left md:w-[66%] sm:w-[86%] tracking-[0.02rem] mt-[0.65rem] leading-[2.8rem]'>
+              <SecondHeading tw='md:text-left md:w-[66%] sm:w-[86%] tracking-[0.026rem] font-semibold mt-[0.65rem] leading-[2.8rem]'>
                 We are a leading beauty clinic that has been around since 2002
               </SecondHeading>
               <Paragraph tw='md:text-left md:w-[60%] sm:w-[86%] mt-[1.2rem]'>

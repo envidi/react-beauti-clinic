@@ -81,7 +81,7 @@ function Team({
         css={[
           tw`flex justify-center`, // Add base styles first
           page === "home" && tw`mt-[7.2rem]`, // Then add conditional styles
-          page === "about" && tw`mt-[8.35rem]`, // Then add conditional styles
+          page === "about" && tw`mt-[8.4rem]`, // Then add conditional styles
           page === "team" && tw`mt-[5rem]`, // Then add conditional styles
         ]}
       >

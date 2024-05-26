@@ -38,7 +38,7 @@ function Blog() {
   return (
     <div tw='relative'>
       <ImageSrc src="/Wave_Line_2.png" clx="absolute top-[-9rem] right-0 w-[36.5%] -z-10"/>
-      <Section tw='mt-[3.51rem] z-50'>
+      <Section tw='mt-[3.54rem] z-50'>
         <Wrapper tw='flex flex-col items-center '>
           <TitleHeading tw='ml-[0.2rem] '>The Blog</TitleHeading>
 
@@ -57,10 +57,10 @@ function Blog() {
                   </div>
                   <div tw='absolute bg-background-main top-0 left-0 w-full h-full -z-10'></div>
                   <div tw='flex flex-col items-start pl-[2.17rem] pr-[1.5rem] pt-[2rem]'>
-                    <CardTitle tw='mt-[1.4rem] leading-[1.49rem] ml-[0.25rem]'>
+                    <CardTitle tw='mt-[1.55rem] leading-[1.35rem] ml-[0.25rem]'>
                       {data.title}
                     </CardTitle>
-                    <CardParagraph tw="leading-[1.3rem] ml-[0.2rem] w-[90%]">{data.p}</CardParagraph>
+                    <CardParagraph tw="leading-[1.3rem] ml-[0.25rem] text-[0.9rem] tracking-[0.077rem] w-[90%] mt-[0.89rem]">{data.p}</CardParagraph>
                     <Button
                       tw='flex  text-secondary-mainColor border-none w-fit p-0 text-[0.85rem] tracking-[0.01rem] font-bold ml-[0.3rem] mt-[1.5rem] items-center'
                       variant='outline'

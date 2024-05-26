@@ -1,6 +1,7 @@
 import tw, { styled, css } from "twin.macro";
 import Wrapper from "../../../components/Wrapper";
 import Image from "../../../components/Image";
+import { useLocation } from "react-router-dom";
 const BackgroundFooter = styled.div`
   ${css`
     position: relative;
@@ -23,11 +24,14 @@ const IconFooter = tw.div`
 const HeadingFooter = tw.h5`text-[1.1rem]`;
 const NoteFooter = tw.p`lg:ml-[2.16rem] italic`;
 function Footer() {
+  const location = useLocation();
+  const locationName = location.pathname;
+  const isBlogPage = locationName === "/blog" ? tw`mt-[-0.95rem]` : "";
   return (
-    <footer tw='w-full justify-center flex items-start'>
+    <footer css={[isBlogPage]} tw='w-full justify-center flex items-start '>
       <BackgroundFooter tw='lg:bg-contain 3xl:bg-cover xs:bg-center 2xl:bg-center 3xl:bg-top xs:bg-cover 2xl:h-auto 2xl:py-[10rem] lg:h-[50.8vw] xs:h-auto xs:py-[6vw] lg:py-[2vw]'>
         <div tw='absolute bottom-0 w-full -z-10 h-[20rem] bg-secondary-footerColor'></div>
-        <Wrapper tw='flex flex-col 2xl:mt-[10rem] xl:mt-[14.56vw] lg:mt-[8.3rem] mx-auto md:mt-[5.3rem] xs:mt-[2.3rem]'>
+        <Wrapper tw='flex flex-col 2xl:mt-[10rem] xl:mt-[14.56vw]  lg:mt-[8.3rem] mx-auto md:mt-[5.3rem] xs:mt-[2.3rem]'>
           <a
             href='#'
             tw='absolute bottom-[11.4rem] rounded-md text-background-main right-[4rem] w-[2.3rem] h-[2.3rem] bg-secondary-mainColor flex justify-center items-center'

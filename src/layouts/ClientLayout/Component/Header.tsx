@@ -165,10 +165,20 @@ function Header() {
                 );
               })}
             </ul>
-
-            <Button tw='py-[0.89rem] pt-[0.9rem] text-[0.95rem] tracking-[0.13rem]'>
-              Contact
-            </Button>
+            {locationName == "/contact" && (
+              <Link to={"/contact"}>
+                <Button tw='py-[0.89rem] text-primary-mainColor pt-[0.9rem] text-[0.95rem] tracking-[0.13rem]'>
+                  Contact
+                </Button>
+              </Link>
+            )}
+            {locationName !== "/contact" && (
+              <Link to={"/contact"}>
+                <Button tw='py-[0.89rem] pt-[0.9rem] text-[0.95rem] tracking-[0.13rem]'>
+                  Contact
+                </Button>
+              </Link>
+            )}
           </div>
         </nav>
       </Wrapper>

@@ -8,11 +8,11 @@ import Section from "../../../components/Section";
 import ImageSrc from "../../../components/ImageSrc";
 function AboutUs() {
   return (
-    <Section tw='mt-[1.22rem]'>
+    <Section tw='mt-[1.12rem]'>
       <Wrapper tw=' flex md:flex-row-reverse xs:flex-col justify-between gap-y-14'>
         <div tw='flex flex-col ml-[0.2rem]  md:items-start xs:items-center  basis-[42.2%] gap-y-[0.3rem]'>
           <TitleHeading tw='md:text-left'>About Us</TitleHeading>
-          <SecondHeading tw='md:text-left w-full font-semibold  tracking-[0.02rem] text-[2.2rem] leading-[2.75rem] mt-[0.3rem]'>
+          <SecondHeading tw='md:text-left w-full font-semibold  tracking-[0.01rem] text-[2.23rem] leading-[2.8rem] mt-[0.3rem]'>
             We are the best beauty clinic
           </SecondHeading>
           <Paragraph tw='md:text-left xs:w-[100%] sm:w-[80%]  md:w-[97%] mt-[0.45rem]'>
@@ -22,7 +22,7 @@ function AboutUs() {
             suspendisse placerat.
           </Paragraph>
 
-          <div tw='flex md:justify-start xs:justify-center items-center gap-x-[2.7rem] mt-[2.65rem] w-full'>
+          <div tw='flex md:justify-start xs:justify-center items-center gap-x-[2.7rem] mt-[2.6rem] w-full'>
             <Button
               variant='large'
               tw='w-fit tracking-[0.118rem] text-[0.98rem] pl-[3.08rem] pr-[2.95rem] py-[1.1rem]'

@@ -11,6 +11,7 @@ import ContactPage from "../pages/Contact/index.tsx";
 import Signup from "../pages/Authentication/Signup.tsx";
 import Login from "../pages/Authentication/Login.tsx";
 import PrivateRouter from "./PrivateRouter.tsx";
+import PrivateAuthenForm from "./PrivateAuthenForm.tsx";
 function RouterCustom() {
   return (
     <Routes>
@@ -41,8 +42,23 @@ function RouterCustom() {
         {/* <Route path='*' element={<NoMatch />} /> */}
       </Route>
 
-      <Route index path='/signup' element={<Signup />} />
-      <Route path='/signin' element={<Login />} />
+      <Route
+        index
+        path='/signup'
+        element={
+          <PrivateAuthenForm>
+            <Signup />
+          </PrivateAuthenForm>
+        }
+      />
+      <Route
+        path='/signin'
+        element={
+          <PrivateAuthenForm>
+            <Login />
+          </PrivateAuthenForm>
+        }
+      />
       {/* <Route path='about' element={<About />} />
       <Route path='dashboard' element={<Dashboard />} /> */}
 

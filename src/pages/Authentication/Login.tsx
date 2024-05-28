@@ -40,15 +40,15 @@ function Login() {
       queryClient.invalidateQueries({
         queryKey: ["USERDETAIL"],
       });
-      setTimeout(()=>{
+      setTimeout(() => {
         navigate("/");
-      },1000)
+      }, 1000);
     },
     onError: (error) => {
       toast.error("Signin failed", {
         position: "top-right",
       });
-      console.log(error)
+      console.log(error);
     },
   });
   const [isShow, setIsShow] = useState(false);
@@ -60,7 +60,7 @@ function Login() {
       )
       .messages({
         "string.pattern.base":
-          "Password should be between 8 to 20 characters and contain letters or numbers only or regex characters",
+          "Password should be between 8 to 20 characters and contain uppercase, lowercase letters and numbers only and regex characters(@)",
         "string.min": "Password must have at least 8 characters",
       }),
   });

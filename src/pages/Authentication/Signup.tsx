@@ -61,7 +61,7 @@ function Signup() {
       )
       .messages({
         "string.pattern.base":
-          "Password should be between 3 to 30 characters and contain letters or numbers only or regex characters",
+          "Password should be between 8 to 20 characters and contain uppercase, lowercase letters and numbers only and regex characters(@)",
         "string.min": "Password must have at least 3 characters",
       }),
     confirmPassword: Joi.any().valid(Joi.ref("password")).required().messages({

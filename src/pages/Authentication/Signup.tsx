@@ -79,6 +79,7 @@ function Signup() {
       password: "",
       confirmPassword: "",
     },
+    mode:'onChange'
   });
   const onSubmit: SubmitHandler<User> = (values) => {
     mutation.mutate(values);

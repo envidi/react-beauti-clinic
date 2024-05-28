@@ -72,6 +72,7 @@ function Login() {
       email: state?.email || "",
       password: state?.password || "",
     },
+    mode:'onChange'
   });
   function onSubmit(values: { email: string; password: string }) {
     mutation.mutate(values);

@@ -23,11 +23,12 @@ import { toast } from "react-toastify";
 import { signin } from "../../api/user";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Loader } from "lucide-react";
 
 function Login() {
   const navigate = useNavigate();
-  const {state} = useLocation();
-  
+  const { state } = useLocation();
+
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: (newUser: { email: string; password: string }) => {
@@ -68,8 +69,8 @@ function Login() {
   const form = useForm({
     resolver: joiResolver(formSchema),
     defaultValues: {
-      email: state?.email || '',
-      password: state?.password|| '',
+      email: state?.email || "",
+      password: state?.password || "",
     },
   });
   function onSubmit(values: { email: string; password: string }) {
@@ -159,8 +160,15 @@ function Login() {
                   Register
                 </Link>
               </div>
-
-              <Button type='submit' tw="mt-10">Submit</Button>
+              {mutation.isPending ? (
+                <Button type='button' tw='mt-10'>
+                  <Loader className="animate-spin" />
+                </Button>
+              ) : (
+                <Button type='submit' tw='mt-10'>
+                  Submit
+                </Button>
+              )}
             </form>
           </Form>
         </div>

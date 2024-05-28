@@ -23,6 +23,7 @@ import { useMutation } from "@tanstack/react-query";
 import { signup } from "../../api/user";
 import { toast } from "react-toastify";
 import { Link, useNavigate } from "react-router-dom";
+import { Loader } from "lucide-react";
 export interface User {
   username: string;
   email: string;
@@ -215,10 +216,15 @@ function Signup() {
                   Login
                 </Link>
               </div>
-
-              <Button type='submit' tw='mt-10'>
-                Submit
-              </Button>
+              {mutation.isPending ? (
+                <Button type='button' tw='mt-10'>
+                  <Loader className='animate-spin' />
+                </Button>
+              ) : (
+                <Button type='submit' tw='mt-10'>
+                  Submit
+                </Button>
+              )}
             </form>
           </Form>
         </div>

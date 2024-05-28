@@ -31,29 +31,31 @@ export interface User {
 }
 
 function Signup() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const mutation = useMutation({
     mutationFn: (newUser: User) => {
       return signup(newUser);
     },
-    onSuccess:()=>{
-        toast.success('Signup successful',{
-            position:'top-right'
-        })
-        form.reset()
-        navigate('/signin')
+    onSuccess: (_, variables) => {
+      toast.success("Register successful", {
+        position: "top-right",
+      });
+
+      form.reset();
+      navigate("/signin", {
+        state: { email: variables.email, password: variables.password },
+      });
     },
-    onError:(error)=>{
-        toast.error('Signup failed',{
-            position:'top-right'
-        })
-        console.log(error)
-    }
+    onError: () => {
+      toast.error("Register failed", {
+        position: "top-right",
+      });
+    },
   });
   const [isShow, setIsShow] = useState(false);
   const [isShowConfirm, setIsShowConfirm] = useState(false);
   const formSchema = Joi.object({
-    username: Joi.string().min(3).required().trim(),
+    username: Joi.string().min(2).required().trim(),
     email: Joi.string().email({ tlds: { allow: ["com", "net"] } }),
     password: Joi.string()
       .pattern(
@@ -79,6 +81,7 @@ function Signup() {
   });
   const onSubmit: SubmitHandler<User> = (values) => {
     mutation.mutate(values);
+
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
   };
@@ -93,14 +96,14 @@ function Signup() {
       </div>
       <Wrapper tw='flex justify-center flex-row'>
         <div
-          tw='md:w-[50%] sm:w-[60%] xs:w-[80%] flex flex-col xs:items-center items-center px-[2rem] py-[1.5rem] rounded-[25px] bg-background-main'
+          tw='md:w-[50%] sm:w-[60%] xs:w-[80%] flex flex-col xs:items-center items-center px-[2rem] py-[1.5rem] rounded-[25px] mb-10 bg-background-main'
           css={[
             css`
               box-shadow: 0px 25px 50px 25px #f6f7ff;
             `,
           ]}
         >
-          <TitleHeading tw='md:text-center'>Signup</TitleHeading>
+          <TitleHeading tw='md:text-center'>Register</TitleHeading>
           <SecondHeading tw='md:text-center mt-[0.6rem] tracking-[0.015rem] xs:w-[100%] sm:w-[80%] leading-[2.8rem]'>
             Get started with your account
           </SecondHeading>
@@ -108,13 +111,13 @@ function Signup() {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className='space-y-8 w-full z-50 mt-[1rem]'
+              className=' w-full z-50 mt-[0.5rem] '
             >
               <FormField
                 control={form.control}
                 name='username'
                 render={({ field }) => (
-                  <FormItem className='flex flex-col'>
+                  <FormItem className='flex flex-col mt-2'>
                     <FormLabel className='text-primary-footerColor font-semibold tracking-[0.03rem]'>
                       Username
                     </FormLabel>
@@ -134,7 +137,7 @@ function Signup() {
                 control={form.control}
                 name='email'
                 render={({ field }) => (
-                  <FormItem className='flex flex-col'>
+                  <FormItem className='flex flex-col mt-5'>
                     <FormLabel className='text-primary-footerColor font-semibold tracking-[0.03rem]'>
                       Email
                     </FormLabel>
@@ -156,7 +159,7 @@ function Signup() {
                 control={form.control}
                 name='password'
                 render={({ field }) => (
-                  <FormItem className='flex flex-col'>
+                  <FormItem className='flex flex-col mt-5'>
                     <FormLabel className='text-primary-footerColor font-semibold tracking-[0.03rem]'>
                       Password
                     </FormLabel>
@@ -180,7 +183,7 @@ function Signup() {
                 control={form.control}
                 name='confirmPassword'
                 render={({ field }) => (
-                  <FormItem className='flex flex-col'>
+                  <FormItem className='flex flex-col mt-5'>
                     <FormLabel className='text-primary-footerColor font-semibold tracking-[0.03rem]'>
                       Confirm Password
                     </FormLabel>
@@ -203,8 +206,19 @@ function Signup() {
                   </FormItem>
                 )}
               />
-              <Link to={'/signin'} className="italic text-[0.9rem] text-secondary-mainColor block">Signin</Link>
-              <Button type='submit'>Submit</Button>
+              <div tw='flex items-center mt-2 tracking-[0.045rem] text-[0.85rem] text-center justify-center gap-1'>
+                Already a member ?
+                <Link
+                  to={"/signin"}
+                  className='text-secondary-mainColor block font-semibold'
+                >
+                  Login
+                </Link>
+              </div>
+
+              <Button type='submit' tw='mt-10'>
+                Submit
+              </Button>
             </form>
           </Form>
         </div>

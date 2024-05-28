@@ -22,17 +22,19 @@ import EyeShow from "./EyeShow";
 import { toast } from "react-toastify";
 import { signin } from "../../api/user";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
+  const {state} = useLocation();
+  
   const queryClient = useQueryClient();
   const mutation = useMutation({
     mutationFn: (newUser: { email: string; password: string }) => {
       return signin(newUser);
     },
     onSuccess: (data) => {
-      toast.success("Signin successful", {
+      toast.success("Login successful", {
         position: "top-right",
       });
       localStorage.setItem("accessToken", data.data.accessToken);
@@ -44,11 +46,10 @@ function Login() {
         navigate("/");
       }, 1000);
     },
-    onError: (error) => {
-      toast.error("Signin failed", {
+    onError: () => {
+      toast.error("Login failed", {
         position: "top-right",
       });
-      console.log(error);
     },
   });
   const [isShow, setIsShow] = useState(false);
@@ -67,8 +68,8 @@ function Login() {
   const form = useForm({
     resolver: joiResolver(formSchema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: state?.email || '',
+      password: state?.password|| '',
     },
   });
   function onSubmit(values: { email: string; password: string }) {
@@ -93,21 +94,21 @@ function Login() {
             `,
           ]}
         >
-          <TitleHeading tw='md:text-center'>Signin</TitleHeading>
+          <TitleHeading tw='md:text-center'>Login</TitleHeading>
           <SecondHeading tw='md:text-center mt-[0.6rem] tracking-[0.015rem] xs:w-[100%] sm:w-[80%] leading-[2.8rem]'>
-            Sign in with your account
+            Login with your account
           </SecondHeading>
 
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className='space-y-8 w-full z-50 mt-[1rem]'
+              className='w-full z-50 mt-[1rem]'
             >
               <FormField
                 control={form.control}
                 name='email'
                 render={({ field }) => (
-                  <FormItem className='flex flex-col'>
+                  <FormItem className='flex flex-col mt-3'>
                     <FormLabel className='text-primary-footerColor font-semibold tracking-[0.03rem]'>
                       Email
                     </FormLabel>
@@ -129,7 +130,7 @@ function Login() {
                 control={form.control}
                 name='password'
                 render={({ field }) => (
-                  <FormItem className='flex flex-col'>
+                  <FormItem className='flex flex-col mt-5'>
                     <FormLabel className='text-primary-footerColor font-semibold tracking-[0.03rem]'>
                       Password
                     </FormLabel>
@@ -149,13 +150,17 @@ function Login() {
                   </FormItem>
                 )}
               />
-              <Link
-                to={"/signup"}
-                className='italic text-[0.9rem] text-secondary-mainColor block'
-              >
-                Signup
-              </Link>
-              <Button type='submit'>Submit</Button>
+              <div tw='flex items-center mt-2 tracking-[0.045rem] text-[0.85rem] text-center justify-center gap-1'>
+                Don't have account ?
+                <Link
+                  to={"/signup"}
+                  className='text-secondary-mainColor block font-semibold'
+                >
+                  Register
+                </Link>
+              </div>
+
+              <Button type='submit' tw="mt-10">Submit</Button>
             </form>
           </Form>
         </div>

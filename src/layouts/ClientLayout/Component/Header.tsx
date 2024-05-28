@@ -5,6 +5,7 @@ import Button from "../../../components/Button";
 import Wrapper from "../../../components/Wrapper";
 import NavMobile from "../../../components/NavMobile";
 import ImageSrc from "../../../components/ImageSrc";
+import NavbarProfile from "./NavbarProfile";
 
 type WrapperVariant = "light" | "dark";
 interface UlProps {
@@ -14,8 +15,8 @@ interface LiProps {
   livariant?: WrapperVariant;
 }
 const ulvariants: Record<WrapperVariant, TwStyle> = {
-  dark: tw` text-primary-textColor xl:gap-[2.9rem]`,
-  light: tw` text-secondary-secondNav xl:gap-[2.82rem]`,
+  dark: tw` text-primary-textColor xl:gap-[1.9rem]`,
+  light: tw` text-secondary-secondNav xl:gap-[1.9rem]`,
 };
 const currentLiVariants: Record<WrapperVariant, TwStyle> = {
   dark: tw` text-primary-mainColor tracking-[0.11rem] font-semibold`,
@@ -101,9 +102,9 @@ function Header() {
     <header tw='flex w-full justify-center'>
       {/* <div tw='container large-container'> */}
       <Wrapper header={true}>
-        <nav tw='flex items-center lg:py-[2.3rem] md:py-4 xs:py-3 justify-between w-full gap-2'>
+        <nav tw='flex items-center lg:py-[2.3rem] xs:pr-5 lg:px-0 md:py-4 xs:py-3 justify-between w-full gap-2'>
           <NavMobile />
-          <div tw='w-full md:block hidden '>
+          <div tw='md:block hidden '>
             <ImageSrc
               clx={` md:w-[13.4rem] object-cover mt-1 ${
                 location.pathname === "/second"
@@ -117,8 +118,8 @@ function Header() {
           <div
             className={`md:flex md:gap-[1.5rem] hidden ${
               location.pathname === "/second"
-                ? "xl:gap-[3.3rem] mt-[-0.00rem]"
-                : "xl:gap-[3.25rem] mt-[-0.35rem]"
+                ? "xl:gap-[1rem] mt-[-0.00rem]"
+                : "xl:gap-[1rem] mt-[-0.35rem]"
             }`}
           >
             <ul css={styles.ul({ variant })}>
@@ -180,6 +181,7 @@ function Header() {
               </Link>
             )}
           </div>
+          <NavbarProfile />
         </nav>
       </Wrapper>
 

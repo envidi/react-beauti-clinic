@@ -1,17 +1,25 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import { createContext, useState } from "react";
 // import { useNavigate } from "react-router-dom";
 import { getDetailUser } from "../api/user";
+import { useNavigate } from "react-router-dom";
+interface ContextAuth {
+  detailUser: { detailUser: { username: string; email: string } };
+  logout: () => void;
+}
 
-export const ContextMain = createContext<any>({
+export const ContextMain = createContext<ContextAuth>({
   detailUser: {
-    username: "",
-    email: "",
+    detailUser: {
+      username: "",
+      email: "",
+    },
   },
+  logout: (): void => {},
 });
 const ContextProvider = ({ children }: { children: React.ReactNode }) => {
-  // const navigate = useNavigate();
-  // const queryClient = useQueryClient();
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
   const [isLogined, setIsLogined] = useState(
     !!localStorage.getItem("accessToken"),
   );
@@ -29,29 +37,24 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
   });
 
   // // eslint-disable-next-line no-unused-vars
-  // const logout = () => {
-  //   if (ticket && ticket.ticket_id) {
-  //     mutate({
-  //       ticket_id: ticket.ticket_id
-  //     })
-  //   }
-  //   localStorage.removeItem('Accesstoken')
-  // //   queryClient.invalidateQueries({
-  // //     queryKey: [USERDETAIL]
-  // //   })
-  //   setTimeout(() => {
-  //     localStorage.removeItem('ticket')
-  //     localStorage.removeItem('countdown')
-  //   }, 1000)
-  //   navigate('/')
-  //   setIsLogined(false)
-  // //   toast.success('Đăng xuất thành công')
-  // }
+  const logout = () => {
+    localStorage.removeItem("accessToken");
+    queryClient.invalidateQueries({
+      queryKey: ["USERDETAIL"],
+    });
+    // setTimeout(() => {
+    //   localStorage.removeItem("ticket");
+    //   localStorage.removeItem("countdown");
+    // }, 1000);
+    navigate("/");
+    //   toast.success('Đăng xuất thành công')
+  };
 
   const values = {
     isLogined,
     setIsLogined,
     detailUser: isLoading ? {} : detailUser,
+    logout,
   };
   return <ContextMain.Provider value={values}>{children}</ContextMain.Provider>;
 };

@@ -19,9 +19,9 @@ function RouterCustom() {
       <Route
         path='/'
         element={
-          
+          <PrivateRouter>
             <ClientLayout />
-          
+          </PrivateRouter>
         }
       >
         <Route index element={<Home />} />

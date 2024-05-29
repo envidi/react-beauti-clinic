@@ -12,7 +12,6 @@ import Signup from "../pages/Authentication/Signup.tsx";
 import Login from "../pages/Authentication/Login.tsx";
 import PrivateRouter from "./PrivateRouter.tsx";
 import PrivateAuthenForm from "./PrivateAuthenForm.tsx";
-import Form from "../pages/Authentication/Form.tsx";
 function RouterCustom() {
   return (
     <Routes>
@@ -32,7 +31,6 @@ function RouterCustom() {
         <Route path='/team' element={<TeamPage />} />
         <Route path='/blog' element={<Blog />} />
         <Route path='/contact' element={<ContactPage />} />
-        <Route path='/form' element={<Form />} />
         {/* <Route path='/signup' element={<Signup />} />
         <Route path='/signin' element={<Login />} /> */}
         {/* <Route path='about' element={<About />} />

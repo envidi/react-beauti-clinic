@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 interface ContextAuth {
   detailUser: { detailUser: { username: string; email: string } };
   logout: () => void;
+  isLoading : boolean
 }
 
 export const ContextMain = createContext<ContextAuth>({
@@ -16,6 +17,7 @@ export const ContextMain = createContext<ContextAuth>({
     },
   },
   logout: (): void => {},
+  isLoading: false
 });
 const ContextProvider = ({ children }: { children: React.ReactNode }) => {
   const navigate = useNavigate();
@@ -55,6 +57,7 @@ const ContextProvider = ({ children }: { children: React.ReactNode }) => {
     setIsLogined,
     detailUser: isLoading ? {} : detailUser,
     logout,
+    isLoading
   };
   return <ContextMain.Provider value={values}>{children}</ContextMain.Provider>;
 };
